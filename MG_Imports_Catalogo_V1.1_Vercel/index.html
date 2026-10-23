@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#090909" />
+  <meta name="description" content="Catálogo virtual MG Imports: camisas de futebol e produtos selecionados." />
+  <title>Catálogo de Camisas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="catalog-loading">
+<div id="catalogLoader" class="catalog-loader" aria-live="polite" aria-busy="true">
+  <div class="catalog-loader-content">
+
+    <div class="loader-logo-wrap">
+      <div class="loader-glow"></div>
+
+      <img
+        src="assets/mg-imports-logo.webp"
+        alt="MG Imports"
+        class="loader-logo"
+      >
+    </div>
+
+    <div class="loader-brand">MG IMPORTS</div>
+
+    <h2>Preparando o catálogo</h2>
+
+    <p>Carregando as camisas mais recentes...</p>
+
+    <div class="loader-track">
+      <span></span>
+    </div>
+
+    <div class="loader-dots">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+  </div>
+</div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Início">
+      <span class="brand-mark brand-logo"><img src="assets/mg-imports-logo.webp" alt="Logo MG Imports"></span>
+      <span class="brand-copy"><strong id="brandName">MG IMPORTS</strong><small>CAMISAS IMPORTADAS</small></span>
+    </a>
+    <div class="top-actions">
+      <button id="searchToggle" class="icon-btn" aria-label="Buscar produtos" title="Buscar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+      </button>
+      <a id="instagramLink" class="ghost-btn" href="#" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell reveal">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> CATÁLOGO ATUALIZADO</div>
+        <h1 id="heroTitle">Camisas que fazem <em>história.</em></h1>
+        <p id="heroSubtitle">Modelos selecionados para quem vive futebol.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-scroll-products>Ver catálogo</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+  <div id="heroCarousel" class="hero-carousel"></div>
+
+  <button
+    class="hero-nav hero-prev"
+    data-hero-nav="prev"
+    aria-label="Produto anterior">
+    ‹
+  </button>
+
+  <button
+    class="hero-nav hero-next"
+    data-hero-nav="next"
+    aria-label="Próximo produto">
+    ›
+  </button>
+
+  <div id="heroDots" class="hero-dots"></div>
+
+  <div class="hero-badge">
+    <strong id="heroCount">0</strong>
+    <span>modelos<br>no catálogo</span>
+  </div>
+</div>
+    </section>
+
+    <section id="catalog" class="catalog shell reveal">
+      <div class="section-head">
+        <div><span class="kicker">NOSSO CATÁLOGO</span><h2>Escolha a sua próxima camisa.</h2></div>
+        <div class="result-count"><strong id="resultCount">0</strong><span>resultados</span></div>
+      </div>
+
+      <div id="searchPanel" class="search-panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+        <input id="searchInput" type="search" placeholder="Busque por time, camisa, temporada..." autocomplete="off" />
+        <button id="clearSearch" aria-label="Limpar busca">×</button>
+      </div>
+
+      <div class="filters-row">
+        <div id="categoryFilters" class="category-filters"></div>
+        <button id="filterButton" class="filter-btn" aria-label="Mais filtros">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+          Filtros
+        </button>
+      </div>
+
+      <div id="activeFilters" class="active-filters"></div>
+      <div id="productsGrid" class="products-grid" aria-live="polite"></div>
+
+      <div id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">⌁</div>
+        <h3>Nenhuma camisa encontrada.</h3>
+        <p>Tente trocar os filtros ou limpar a busca.</p>
+        <button id="resetFilters" class="secondary-btn">Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="trust shell reveal">
+      <article><span>01</span><div><strong>Estoque real</strong><p>Consulte os detalhes de cada produto e fale com a MG Imports.</p></div></article>
+      <article><span>02</span><div><strong>Compra direta</strong><p>Escolha tamanho e fale com a loja pelo WhatsApp.</p></div></article>
+      <article><span>03</span><div><strong>Novidades rápidas</strong><p>Um cadastro na planilha atualiza todo o catálogo.</p></div></article>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="brand footer-brand"><span class="brand-mark brand-logo"><img src="assets/mg-imports-logo.webp" alt="Logo MG Imports"></span><span class="brand-copy"><strong id="footerBrand">MG IMPORTS</strong><small>CATÁLOGO VIRTUAL</small></span></div>
+    <p>Consulte os detalhes e condições de cada produto pelo WhatsApp.</p>
+    <span id="year"></span>
+  </footer>
+
+  <div id="filterDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-sheet">
+      <div class="drawer-grip"></div>
+      <div class="drawer-head"><h3>Filtros</h3><button data-close-drawer>×</button></div>
+      <label>Modelo<select id="modelFilter"><option value="">Todos</option></select></label>
+      <label>Tamanho<select id="sizeFilter"><option value="">Todos</option></select></label>
+      <label>Temporada<select id="seasonFilter"><option value="">Todas</option></select></label>
+      <div class="drawer-actions"><button id="clearDrawer" class="secondary-btn">Limpar</button><button data-close-drawer class="primary-btn">Ver resultados</button></div>
+    </div>
+  </div>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="product-sheet" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+      <button class="modal-close" data-close-modal aria-label="Fechar">×</button>
+      <div class="modal-image-wrap"><img id="modalImage" src="" alt="" /><span id="modalAvailability" class="availability-badge" hidden></span></div>
+      <div class="modal-body">
+        <div class="modal-meta"><span id="modalCategory"></span><span id="modalSeason"></span></div>
+        <h3 id="modalProductName"></h3>
+        <p id="modalDescription"></p>
+        <div class="modal-price"><span>A partir de</span><strong id="modalPrice"></strong></div>
+        <div class="size-block"><div class="size-title"><strong>Escolha o tamanho</strong><span id="modalLeadTime"></span></div><div id="modalSizes" class="size-options"></div></div>
+        <a id="whatsappButton" class="whatsapp-btn disabled" href="#" target="_blank" rel="noopener"><span>↗</span><div><small>FINALIZAR PELO</small><strong>WhatsApp</strong></div></a>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="catalog-demo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
